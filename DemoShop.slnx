@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="DemoShop.BLL/DemoShop.BLL.csproj" />
+  <Project Path="DemoShop.DAL/DemoShop.DAL.csproj" />
+  <Project Path="DemoShop.PL/DemoShop.PL.csproj" />
+</Solution>
