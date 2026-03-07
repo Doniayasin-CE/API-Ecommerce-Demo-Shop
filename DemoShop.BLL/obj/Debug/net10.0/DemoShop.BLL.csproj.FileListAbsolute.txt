@@ -1,0 +1,16 @@
+C:\Users\PC\Documents\backend-ASP\API\DemoShop\DemoShop.BLL\bin\Debug\net10.0\DemoShop.BLL.deps.json
+C:\Users\PC\Documents\backend-ASP\API\DemoShop\DemoShop.BLL\bin\Debug\net10.0\DemoShop.BLL.dll
+C:\Users\PC\Documents\backend-ASP\API\DemoShop\DemoShop.BLL\bin\Debug\net10.0\DemoShop.BLL.pdb
+C:\Users\PC\Documents\backend-ASP\API\DemoShop\DemoShop.BLL\bin\Debug\net10.0\DemoShop.DAL.dll
+C:\Users\PC\Documents\backend-ASP\API\DemoShop\DemoShop.BLL\bin\Debug\net10.0\DemoShop.DAL.pdb
+C:\Users\PC\Documents\backend-ASP\API\DemoShop\DemoShop.BLL\obj\Debug\net10.0\DemoShop.BLL.csproj.AssemblyReference.cache
+C:\Users\PC\Documents\backend-ASP\API\DemoShop\DemoShop.BLL\obj\Debug\net10.0\DemoShop.BLL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\PC\Documents\backend-ASP\API\DemoShop\DemoShop.BLL\obj\Debug\net10.0\DemoShop.BLL.AssemblyInfoInputs.cache
+C:\Users\PC\Documents\backend-ASP\API\DemoShop\DemoShop.BLL\obj\Debug\net10.0\DemoShop.BLL.AssemblyInfo.cs
+C:\Users\PC\Documents\backend-ASP\API\DemoShop\DemoShop.BLL\obj\Debug\net10.0\DemoShop.BLL.csproj.CoreCompileInputs.cache
+C:\Users\PC\Documents\backend-ASP\API\DemoShop\DemoShop.BLL\obj\Debug\net10.0\DemoShop.BLL.sourcelink.json
+C:\Users\PC\Documents\backend-ASP\API\DemoShop\DemoShop.BLL\obj\Debug\net10.0\DemoShop.B4FCD4B7.Up2Date
+C:\Users\PC\Documents\backend-ASP\API\DemoShop\DemoShop.BLL\obj\Debug\net10.0\DemoShop.BLL.dll
+C:\Users\PC\Documents\backend-ASP\API\DemoShop\DemoShop.BLL\obj\Debug\net10.0\refint\DemoShop.BLL.dll
+C:\Users\PC\Documents\backend-ASP\API\DemoShop\DemoShop.BLL\obj\Debug\net10.0\DemoShop.BLL.pdb
+C:\Users\PC\Documents\backend-ASP\API\DemoShop\DemoShop.BLL\obj\Debug\net10.0\ref\DemoShop.BLL.dll
