@@ -9,7 +9,6 @@
       "DemoShop.PL/1.0.0": {
         "dependencies": {
           "DemoShop.BLL": "1.0.0",
-          "Mapster": "7.4.0",
           "Microsoft.AspNetCore.OpenApi": "10.0.3",
           "Microsoft.EntityFrameworkCore.Design": "10.0.3"
         },
@@ -793,7 +792,8 @@
       },
       "DemoShop.BLL/1.0.0": {
         "dependencies": {
-          "DemoShop.DAL": "1.0.0"
+          "DemoShop.DAL": "1.0.0",
+          "Mapster": "7.4.0"
         },
         "runtime": {
           "DemoShop.BLL.dll": {

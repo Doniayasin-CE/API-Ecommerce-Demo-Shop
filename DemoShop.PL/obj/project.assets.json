@@ -1083,7 +1083,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
-          "DemoShop.DAL": "1.0.0"
+          "DemoShop.DAL": "1.0.0",
+          "Mapster": "7.4.0"
         },
         "compile": {
           "bin/placeholder/DemoShop.BLL.dll": {}
@@ -3202,7 +3203,6 @@
   "projectFileDependencyGroups": {
     "net10.0": [
       "DemoShop.BLL >= 1.0.0",
-      "Mapster >= 7.4.0",
       "Microsoft.AspNetCore.OpenApi >= 10.0.3",
       "Microsoft.EntityFrameworkCore.Design >= 10.0.3"
     ]
@@ -3261,10 +3261,6 @@
       "net10.0": {
         "targetAlias": "net10.0",
         "dependencies": {
-          "Mapster": {
-            "target": "Package",
-            "version": "[7.4.0, )"
-          },
           "Microsoft.AspNetCore.OpenApi": {
             "target": "Package",
             "version": "[10.0.3, )"

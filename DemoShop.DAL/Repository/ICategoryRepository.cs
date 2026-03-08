@@ -1,13 +1,8 @@
 ﻿using DemoShop.DAL.Models;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace DemoShop.DAL.Repository
 {
-    public interface ICategoryRepository
+    public interface ICategoryRepository : IGenericRepository<Category>
     {
-        List<Category> GetAll();
-        Category Create(Category category);
-    }
+    }   
 }

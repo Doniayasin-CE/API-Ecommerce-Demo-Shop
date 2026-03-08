@@ -17,7 +17,7 @@
   },
   {
     "ContainingType": "DemoShop.PL.Controllers.CategoriesController",
-    "Method": "Get",
+    "Method": "Index",
     "RelativePath": "api/Categories",
     "HttpMethod": "GET",
     "IsController": true,

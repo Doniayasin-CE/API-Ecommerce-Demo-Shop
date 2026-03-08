@@ -1,4 +1,5 @@
 
+using DemoShop.BLL.Service;
 using DemoShop.DAL.Data;
 using DemoShop.DAL.Repository;
 using Microsoft.AspNetCore.Localization;
@@ -47,8 +48,11 @@ namespace DemoShop.PL
                 //});
             });
 
-            // Register the Repository
+            // Register the ICategoryRepository 
             builder.Services.AddScoped<ICategoryRepository,CategoryRepository>();
+
+            // Register the ICategoryRepository 
+            builder.Services.AddScoped<ICategoryService, CategoryService>();
 
             var app = builder.Build();
 
