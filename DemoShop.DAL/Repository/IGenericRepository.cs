@@ -1,13 +1,13 @@
-﻿using DemoShop.DAL.Models;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿
+
+using System.Linq.Expressions;
 
 namespace DemoShop.DAL.Repository
 {
     public interface IGenericRepository<T> where T : class
     {
-        Task<List<T>> GetAllAsync();
         Task<T> CreateAsync(T entity);
+        Task<List<T>> GetAllAsync(String[]? includes = null);
+        Task<T> GetOneAsync(Expression<Func<T, bool>> filter, String[]? includes = null);
     }
 }

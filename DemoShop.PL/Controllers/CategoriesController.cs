@@ -19,9 +19,9 @@ namespace DemoShop.PL.Controllers
         }
 
         [HttpPost("")]
-        public IActionResult Create(CategoryRequest req)
+        public async Task<IActionResult> Create(CategoryRequest req)
         {
-            var res = _categoryService.CreateAsync(req);
+            var res = await _categoryService.CreateCategory(req);
             return Ok(new 
             {
                 Message = _localizer["Success"].Value,
@@ -30,14 +30,20 @@ namespace DemoShop.PL.Controllers
         }
 
         [HttpGet("")]
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            var categories = _categoryService.GetAllAsync();
+            var categories = await _categoryService.GetAllCategories();
             return Ok(new
             {
                 Message = _localizer["Success"].Value,
                 Response = categories
             });
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById(int id)
+        {
+            return Ok(await _categoryService.GetCategory(c => c.Id == id));
         }
     }
 }

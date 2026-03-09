@@ -3,9 +3,7 @@ using DemoShop.DAL.DTO.Response;
 using DemoShop.DAL.Models;
 using DemoShop.DAL.Repository;
 using Mapster;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using System.Linq.Expressions;
 
 namespace DemoShop.BLL.Service
 {
@@ -16,17 +14,23 @@ namespace DemoShop.BLL.Service
         {
             _categoryRepository = categoryRepository;
         }
-        public async Task<CategoryResponse> CreateAsync(CategoryRequest req)
+        public async Task<CategoryResponse> CreateCategory(CategoryRequest req)
         {
             var category = req.Adapt<Category>();
             await _categoryRepository.CreateAsync(category);
             return category.Adapt<CategoryResponse>();
         }
 
-        public async Task<List<CategoryResponse>> GetAllAsync()
+        public async Task<List<CategoryResponse>> GetAllCategories()
         {
-            var categories = await _categoryRepository.GetAllAsync();
+            var categories = await _categoryRepository.GetAllAsync(new String[] {nameof(Category.Translations)});
             return categories.Adapt<List<CategoryResponse>>();
+        }
+
+        public async Task<CategoryResponse?> GetCategory(Expression<Func<Category,bool>> filter)
+        {
+            var category = await _categoryRepository.GetOneAsync(filter, new string[] {nameof(Category.Translations)});
+            return category.Adapt<CategoryResponse>();
         }
     }
 }
