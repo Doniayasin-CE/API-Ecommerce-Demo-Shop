@@ -32,5 +32,12 @@ namespace DemoShop.BLL.Service
             var category = await _categoryRepository.GetOneAsync(filter, new string[] {nameof(Category.Translations)});
             return category.Adapt<CategoryResponse>();
         }
+
+        public async Task<bool> DeleteCategory(int id)
+        {
+            var category = await _categoryRepository.GetOneAsync(c => c.Id == id);
+            if (category == null) return false;
+            return await _categoryRepository.DeleteAsync(category);
+        }
     }
 }

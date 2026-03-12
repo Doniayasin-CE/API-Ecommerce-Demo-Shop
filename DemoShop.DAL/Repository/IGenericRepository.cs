@@ -8,6 +8,7 @@ namespace DemoShop.DAL.Repository
     {
         Task<T> CreateAsync(T entity);
         Task<List<T>> GetAllAsync(String[]? includes = null);
-        Task<T> GetOneAsync(Expression<Func<T, bool>> filter, String[]? includes = null);
+        Task<T?> GetOneAsync(Expression<Func<T, bool>> filter, String[]? includes = null);
+        Task<bool> DeleteAsync(T entity);
     }
 }

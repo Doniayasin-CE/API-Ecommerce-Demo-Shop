@@ -1,7 +1,9 @@
 
 using DemoShop.BLL.Service;
 using DemoShop.DAL.Data;
+using DemoShop.DAL.Models;
 using DemoShop.DAL.Repository;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
@@ -50,9 +52,14 @@ namespace DemoShop.PL
 
             // Register the ICategoryRepository 
             builder.Services.AddScoped<ICategoryRepository,CategoryRepository>();
-
-            // Register the ICategoryRepository 
+            // Register the ICategoryService 
             builder.Services.AddScoped<ICategoryService, CategoryService>();
+            //Register our custom Authentication Service
+            builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
+
+            // 1.Register Identity and its core managers 2.Tell Identity to use our EF Core DbContext
+            builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
+                .AddEntityFrameworkStores<ApplicationDbContext>();
 
             var app = builder.Build();
 

@@ -33,7 +33,7 @@ namespace DemoShop.DAL.Repository
             return await query.ToListAsync();
         }
 
-        public async Task<T> GetOneAsync(Expression<Func<T,bool>> filter, String[]? includes = null)
+        public async Task<T?> GetOneAsync(Expression<Func<T,bool>> filter, String[]? includes = null)
         {
             IQueryable<T> query = _context.Set<T>();
             if (includes != null && includes.Length > 0)
@@ -44,6 +44,13 @@ namespace DemoShop.DAL.Repository
                 }
             }
             return await query.FirstOrDefaultAsync(filter);
+        }
+
+        public async Task<bool> DeleteAsync(T entity)
+        {
+            _context.Remove(entity);
+            var affectedRows = await _context.SaveChangesAsync();
+            return affectedRows > 0;
         }
     }
 }

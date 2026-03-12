@@ -45,5 +45,16 @@ namespace DemoShop.PL.Controllers
         {
             return Ok(await _categoryService.GetCategory(c => c.Id == id));
         }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var isDeleted = await _categoryService.DeleteCategory(id);
+            if (!isDeleted)
+            {
+                return NotFound(new { Message = _localizer["NotFound"].Value });
+            }
+            return Ok(new { Message = _localizer["Success"].Value });
+        }
     }
 }
