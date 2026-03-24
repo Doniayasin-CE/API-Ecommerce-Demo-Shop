@@ -1,8 +1,10 @@
 ﻿using DemoShop.BLL.Service;
 using DemoShop.DAL.DTO.Request;
 using DemoShop.PL.Resources;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Localization;
+using System.Security.Claims;
 
 namespace DemoShop.PL.Controllers
 {
@@ -19,8 +21,10 @@ namespace DemoShop.PL.Controllers
         }
 
         [HttpPost("")]
+        [Authorize]
         public async Task<IActionResult> Create(CategoryRequest req)
         {
+            var user = User.FindFirstValue(ClaimTypes.NameIdentifier);
             var res = await _categoryService.CreateCategory(req);
             return Ok(new 
             {

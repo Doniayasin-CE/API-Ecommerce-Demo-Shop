@@ -1,7 +1,44 @@
 [
   {
     "ContainingType": "DemoShop.PL.Controllers.AccountController",
-    "Method": "UserRegister",
+    "Method": "ConfirmEmail",
+    "RelativePath": "api/Account/confirmEmail",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "token",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DemoShop.PL.Controllers.AccountController",
+    "Method": "Login",
+    "RelativePath": "api/Account/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "DemoShop.DAL.DTO.Request.LoginRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DemoShop.PL.Controllers.AccountController",
+    "Method": "Register",
     "RelativePath": "api/Account/register",
     "HttpMethod": "POST",
     "IsController": true,

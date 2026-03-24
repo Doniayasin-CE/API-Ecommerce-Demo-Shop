@@ -16,10 +16,29 @@ namespace DemoShop.PL.Controllers
         }
 
         [HttpPost("register")]
-        public async Task<IActionResult> UserRegister(RegisterRequest request)
+        public async Task<IActionResult> Register(RegisterRequest request)
         {
             var res = await _authenticationService.Register(request);
             return Ok(res);
+        }
+
+        [HttpPost("login")]
+        public async Task<IActionResult> Login(LoginRequest request)
+        {
+            var res = await _authenticationService.Login(request);
+            if(!res.Success)
+                return BadRequest(res);
+            return Ok(res);
+        }
+
+        [HttpGet("confirmEmail")]
+        public async Task<IActionResult> ConfirmEmail(string token, string userId)
+        {
+            var isConfirmed = await _authenticationService.ConfirmEmail(token, userId);
+            if (isConfirmed)
+                return Ok();
+
+            return BadRequest();
         }
     }
 }

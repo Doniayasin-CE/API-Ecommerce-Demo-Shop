@@ -3,16 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\PC\\Documents\\backend-ASP\\API\\DemoShop\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C9842DBA-BCCD-CA4E-4B23-3C2BFD32E646}|DemoShop.PL\\DemoShop.PL.csproj|c:\\users\\pc\\documents\\backend-asp\\api\\demoshop\\demoshop.pl\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C9842DBA-BCCD-CA4E-4B23-3C2BFD32E646}|DemoShop.PL\\DemoShop.PL.csproj|solutionrelative:demoshop.pl\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D0E355C7-C778-1E68-8A2B-5A574C729B66}|DemoShop.DAL\\DemoShop.DAL.csproj|c:\\users\\pc\\documents\\backend-asp\\api\\demoshop\\demoshop.dal\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D0E355C7-C778-1E68-8A2B-5A574C729B66}|DemoShop.DAL\\DemoShop.DAL.csproj|solutionrelative:demoshop.dal\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{041E9700-C23C-1399-A8CD-4533AB2E6CBD}|DemoShop.BLL\\DemoShop.BLL.csproj|c:\\users\\pc\\documents\\backend-asp\\api\\demoshop\\demoshop.bll\\service\\authenticationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{041E9700-C23C-1399-A8CD-4533AB2E6CBD}|DemoShop.BLL\\DemoShop.BLL.csproj|solutionrelative:demoshop.bll\\service\\authenticationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{041E9700-C23C-1399-A8CD-4533AB2E6CBD}|DemoShop.BLL\\DemoShop.BLL.csproj|c:\\users\\pc\\documents\\backend-asp\\api\\demoshop\\demoshop.bll\\service\\iauthenticationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{041E9700-C23C-1399-A8CD-4533AB2E6CBD}|DemoShop.BLL\\DemoShop.BLL.csproj|solutionrelative:demoshop.bll\\service\\iauthenticationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C9842DBA-BCCD-CA4E-4B23-3C2BFD32E646}|DemoShop.PL\\DemoShop.PL.csproj|c:\\users\\pc\\documents\\backend-asp\\api\\demoshop\\demoshop.pl\\controllers\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C9842DBA-BCCD-CA4E-4B23-3C2BFD32E646}|DemoShop.PL\\DemoShop.PL.csproj|solutionrelative:demoshop.pl\\controllers\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -39,41 +35,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "AccountController.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\Documents\\backend-ASP\\API\\DemoShop\\DemoShop.PL\\Controllers\\AccountController.cs",
-              "RelativeDocumentMoniker": "DemoShop.PL\\Controllers\\AccountController.cs",
-              "ToolTip": "C:\\Users\\PC\\Documents\\backend-ASP\\API\\DemoShop\\DemoShop.PL\\Controllers\\AccountController.cs",
-              "RelativeToolTip": "DemoShop.PL\\Controllers\\AccountController.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Documents\\backend-ASP\\API\\DemoShop\\DemoShop.DAL\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "DemoShop.DAL\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\PC\\Documents\\backend-ASP\\API\\DemoShop\\DemoShop.DAL\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "DemoShop.DAL\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwDoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-12T01:04:31.282Z",
+              "WhenOpened": "2026-03-17T01:54:41.221Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "AuthenticationService.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\Documents\\backend-ASP\\API\\DemoShop\\DemoShop.BLL\\Service\\AuthenticationService.cs",
-              "RelativeDocumentMoniker": "DemoShop.BLL\\Service\\AuthenticationService.cs",
-              "ToolTip": "C:\\Users\\PC\\Documents\\backend-ASP\\API\\DemoShop\\DemoShop.BLL\\Service\\AuthenticationService.cs",
-              "RelativeToolTip": "DemoShop.BLL\\Service\\AuthenticationService.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAmwA8AAAAJAAAAAAAAAA==",
+              "Title": "CategoriesController.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Documents\\backend-ASP\\API\\DemoShop\\DemoShop.PL\\Controllers\\CategoriesController.cs",
+              "RelativeDocumentMoniker": "DemoShop.PL\\Controllers\\CategoriesController.cs",
+              "ToolTip": "C:\\Users\\PC\\Documents\\backend-ASP\\API\\DemoShop\\DemoShop.PL\\Controllers\\CategoriesController.cs",
+              "RelativeToolTip": "DemoShop.PL\\Controllers\\CategoriesController.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAQwCEAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-11T02:35:45.627Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "IAuthenticationService.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\Documents\\backend-ASP\\API\\DemoShop\\DemoShop.BLL\\Service\\IAuthenticationService.cs",
-              "RelativeDocumentMoniker": "DemoShop.BLL\\Service\\IAuthenticationService.cs",
-              "ToolTip": "C:\\Users\\PC\\Documents\\backend-ASP\\API\\DemoShop\\DemoShop.BLL\\Service\\IAuthenticationService.cs",
-              "RelativeToolTip": "DemoShop.BLL\\Service\\IAuthenticationService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-11T02:31:47.486Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-17T01:03:32.948Z"
             }
           ]
         }
