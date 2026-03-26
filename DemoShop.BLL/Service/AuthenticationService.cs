@@ -2,13 +2,14 @@
 using DemoShop.DAL.DTO.Response;
 using DemoShop.DAL.Models;
 using Mapster;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using System.Threading.Tasks;
+
 
 namespace DemoShop.BLL.Service
 {
@@ -17,13 +18,15 @@ namespace DemoShop.BLL.Service
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly IEmailSender _emailSender;
         private readonly IConfiguration _configuration;
+        private readonly IHttpContextAccessor _httpContextAccessor;
 
         public AuthenticationService(UserManager<ApplicationUser> userManager, 
-            IEmailSender emailSender, IConfiguration configuration)
+            IEmailSender emailSender, IConfiguration configuration, IHttpContextAccessor HttpContextAccessor)
         {
             _userManager = userManager;
             _emailSender = emailSender;
             _configuration = configuration;
+            _httpContextAccessor = HttpContextAccessor;
         }
 
         public async Task<RegisterResponse> Register(RegisterRequest request)
@@ -38,7 +41,9 @@ namespace DemoShop.BLL.Service
             var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
             token = Uri.EscapeDataString(token);
 
-            var emailURL = $"https://localhost:7043/api/Account/confirmEmail?token={token}&userId={user.Id}";
+            var scheme = _httpContextAccessor.HttpContext?.Request.Scheme;
+            var host = _httpContextAccessor.HttpContext?.Request.Host;
+            var emailURL = $"{scheme}://{host}/api/Account/confirmEmail?token={token}&userId={user.Id}";
 
             var htmlMessage = $"<h1> Welcome {request.UserName} </h1>" +
                 $"" + $"<a href='{emailURL}'> Click here to confirm your email </a>";

@@ -1,4 +1,3 @@
-
 using DemoShop.BLL.Service;
 using DemoShop.DAL.Data;
 using DemoShop.DAL.Models;
@@ -26,6 +25,17 @@ namespace DemoShop.PL
             builder.Services.AddControllers();
             // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
             builder.Services.AddOpenApi();
+
+            //Enable CORS Policies Configuration
+            var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy(name: MyAllowSpecificOrigins,policy =>{
+                    policy.AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    .AllowAnyHeader();
+                });
+            });
 
             // add AddDbContext services 
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
@@ -64,6 +74,8 @@ namespace DemoShop.PL
             builder.Services.AddScoped<ISeedData, RoleSeedData>();
             // Register the IEmailSender Service
             builder.Services.AddTransient<IEmailSender, EmailSender>();
+            // Register the IEmailSender Service
+            builder.Services.AddHttpContextAccessor();
 
             // 1.Register Identity and its core managers 2.Tell Identity to use our EF Core DbContext
             builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
@@ -89,7 +101,7 @@ namespace DemoShop.PL
                         ValidateIssuerSigningKey = true,
                         ValidIssuer = builder.Configuration["Jwt:Issuer"],
                         ValidAudience = builder.Configuration["Jwt:Audience"],
-                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:SecretKey"]))
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:SecretKey"]!))
                     };
                 });
 
@@ -116,10 +128,10 @@ namespace DemoShop.PL
             }
 
             app.UseHttpsRedirection();
-
+            app.UseRouting();
+            app.UseCors(MyAllowSpecificOrigins);
             app.UseAuthorization();
-
-
+            app.UseAuthentication();
             app.MapControllers();
 
             app.Run();

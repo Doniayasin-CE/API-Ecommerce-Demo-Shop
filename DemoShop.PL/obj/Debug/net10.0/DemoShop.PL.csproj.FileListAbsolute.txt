@@ -76,7 +76,6 @@ C:\Users\PC\Documents\backend-ASP\API\DemoShop\DemoShop.PL\obj\Debug\net10.0\sta
 C:\Users\PC\Documents\backend-ASP\API\DemoShop\DemoShop.PL\obj\Debug\net10.0\staticwebassets.development.json
 C:\Users\PC\Documents\backend-ASP\API\DemoShop\DemoShop.PL\obj\Debug\net10.0\staticwebassets.build.endpoints.json
 C:\Users\PC\Documents\backend-ASP\API\DemoShop\DemoShop.PL\obj\Debug\net10.0\swae.build.ex.cache
-C:\Users\PC\Documents\backend-ASP\API\DemoShop\DemoShop.PL\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
 C:\Users\PC\Documents\backend-ASP\API\DemoShop\DemoShop.PL\obj\Debug\net10.0\DemoShop.018F429A.Up2Date
 C:\Users\PC\Documents\backend-ASP\API\DemoShop\DemoShop.PL\obj\Debug\net10.0\DemoShop.PL.dll
 C:\Users\PC\Documents\backend-ASP\API\DemoShop\DemoShop.PL\obj\Debug\net10.0\refint\DemoShop.PL.dll
@@ -171,3 +170,5 @@ C:\Users\PC\Documents\backend-ASP\API\DemoShop\DemoShop.PL\bin\Debug\net10.0\Map
 C:\Users\PC\Documents\backend-ASP\API\DemoShop\DemoShop.PL\bin\Debug\net10.0\Mapster.Core.dll
 C:\Users\PC\Documents\backend-ASP\API\DemoShop\DemoShop.PL\bin\Debug\net10.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Users\PC\Documents\backend-ASP\API\DemoShop\DemoShop.PL\bin\Debug\net10.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\PC\Documents\backend-ASP\API\DemoShop\DemoShop.PL\bin\Debug\net10.0\dotnet-tools.json
+C:\Users\PC\Documents\backend-ASP\API\DemoShop\DemoShop.PL\obj\Debug\net10.0\ar\DemoShop.PL.resources.cs

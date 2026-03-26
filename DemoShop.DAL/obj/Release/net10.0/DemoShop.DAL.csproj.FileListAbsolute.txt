@@ -1,0 +1,15 @@
+C:\Users\PC\Documents\backend-ASP\API\DemoShop\DemoShop.DAL\bin\Release\net10.0\DemoShop.DAL.deps.json
+C:\Users\PC\Documents\backend-ASP\API\DemoShop\DemoShop.DAL\bin\Release\net10.0\DemoShop.DAL.runtimeconfig.json
+C:\Users\PC\Documents\backend-ASP\API\DemoShop\DemoShop.DAL\bin\Release\net10.0\DemoShop.DAL.dll
+C:\Users\PC\Documents\backend-ASP\API\DemoShop\DemoShop.DAL\bin\Release\net10.0\DemoShop.DAL.pdb
+C:\Users\PC\Documents\backend-ASP\API\DemoShop\DemoShop.DAL\obj\Release\net10.0\DemoShop.DAL.csproj.AssemblyReference.cache
+C:\Users\PC\Documents\backend-ASP\API\DemoShop\DemoShop.DAL\obj\Release\net10.0\DemoShop.DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\PC\Documents\backend-ASP\API\DemoShop\DemoShop.DAL\obj\Release\net10.0\DemoShop.DAL.AssemblyInfoInputs.cache
+C:\Users\PC\Documents\backend-ASP\API\DemoShop\DemoShop.DAL\obj\Release\net10.0\DemoShop.DAL.AssemblyInfo.cs
+C:\Users\PC\Documents\backend-ASP\API\DemoShop\DemoShop.DAL\obj\Release\net10.0\DemoShop.DAL.csproj.CoreCompileInputs.cache
+C:\Users\PC\Documents\backend-ASP\API\DemoShop\DemoShop.DAL\obj\Release\net10.0\DemoShop.DAL.sourcelink.json
+C:\Users\PC\Documents\backend-ASP\API\DemoShop\DemoShop.DAL\obj\Release\net10.0\DemoShop.DAL.dll
+C:\Users\PC\Documents\backend-ASP\API\DemoShop\DemoShop.DAL\obj\Release\net10.0\refint\DemoShop.DAL.dll
+C:\Users\PC\Documents\backend-ASP\API\DemoShop\DemoShop.DAL\obj\Release\net10.0\DemoShop.DAL.pdb
+C:\Users\PC\Documents\backend-ASP\API\DemoShop\DemoShop.DAL\obj\Release\net10.0\DemoShop.DAL.genruntimeconfig.cache
+C:\Users\PC\Documents\backend-ASP\API\DemoShop\DemoShop.DAL\obj\Release\net10.0\ref\DemoShop.DAL.dll
