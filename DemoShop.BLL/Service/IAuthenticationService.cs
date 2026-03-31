@@ -8,5 +8,7 @@ namespace DemoShop.BLL.Service
         Task<RegisterResponse> Register(RegisterRequest request);
         Task<LoginResponse> Login(LoginRequest request);
         Task<bool> ConfirmEmail(string token, string userId);
+        Task<ForgetPasswordResponse> RequestPasswordReset(ForgetPasswordRequest request);
+        Task<ResetPasswordResponse> ResetPassword(ResetPasswordRequest request);
     }
 }

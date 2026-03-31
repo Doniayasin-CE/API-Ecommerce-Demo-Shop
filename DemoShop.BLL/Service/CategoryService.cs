@@ -23,7 +23,11 @@ namespace DemoShop.BLL.Service
 
         public async Task<List<CategoryResponse>> GetAllCategories()
         {
-            var categories = await _categoryRepository.GetAllAsync(new String[] {nameof(Category.Translations)});
+            var categories = await _categoryRepository.GetAllAsync(
+                new String[] {
+                    nameof(Category.Translations),
+                    nameof(Category.CreatedBy)
+                });
             return categories.Adapt<List<CategoryResponse>>();
         }
 
@@ -39,5 +43,6 @@ namespace DemoShop.BLL.Service
             if (category == null) return false;
             return await _categoryRepository.DeleteAsync(category);
         }
+
     }
 }

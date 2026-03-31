@@ -171,4 +171,4 @@ C:\Users\PC\Documents\backend-ASP\API\DemoShop\DemoShop.PL\bin\Debug\net10.0\Map
 C:\Users\PC\Documents\backend-ASP\API\DemoShop\DemoShop.PL\bin\Debug\net10.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Users\PC\Documents\backend-ASP\API\DemoShop\DemoShop.PL\bin\Debug\net10.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\PC\Documents\backend-ASP\API\DemoShop\DemoShop.PL\bin\Debug\net10.0\dotnet-tools.json
-C:\Users\PC\Documents\backend-ASP\API\DemoShop\DemoShop.PL\obj\Debug\net10.0\ar\DemoShop.PL.resources.cs
+C:\Users\PC\Documents\backend-ASP\API\DemoShop\DemoShop.PL\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt

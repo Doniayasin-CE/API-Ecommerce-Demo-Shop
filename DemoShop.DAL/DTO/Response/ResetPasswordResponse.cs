@@ -4,10 +4,9 @@ using System.Text;
 
 namespace DemoShop.DAL.DTO.Response
 {
-    public class RegisterResponse
+    public class ResetPasswordResponse
     {
         public string Message { get; set; }
         public bool Success { get; set; }
-        public List<string>? Errors { get; set; }
     }
 }

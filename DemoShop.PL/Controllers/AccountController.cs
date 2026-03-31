@@ -19,6 +19,8 @@ namespace DemoShop.PL.Controllers
         public async Task<IActionResult> Register(RegisterRequest request)
         {
             var res = await _authenticationService.Register(request);
+            if (!res.Success)
+                return BadRequest(res);
             return Ok(res);
         }
 
@@ -39,6 +41,24 @@ namespace DemoShop.PL.Controllers
                 return Ok();
 
             return BadRequest();
+        }
+
+        [HttpPost("SendCode")]
+        public async Task<IActionResult> RequestPasswordReset(ForgetPasswordRequest request)
+        {
+            var result = await _authenticationService.RequestPasswordReset(request);
+            if(!result.Success)
+                return BadRequest(result);
+            return Ok(result);
+        }
+
+        [HttpPost("ResetPassword")]
+        public async Task<IActionResult> PasswordReset(ResetPasswordRequest request)
+        {
+            var result = await _authenticationService.ResetPassword(request);
+            if (!result.Success)
+                return BadRequest(result);
+            return Ok(result);
         }
     }
 }

@@ -4,6 +4,7 @@ using DemoShop.PL.Resources;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Localization;
+using System.Reflection.Metadata.Ecma335;
 using System.Security.Claims;
 
 namespace DemoShop.PL.Controllers
@@ -36,11 +37,12 @@ namespace DemoShop.PL.Controllers
         [HttpGet("")]
         public async Task<IActionResult> Index()
         {
-            var categories = await _categoryService.GetAllCategories();
+            var result = await _categoryService.GetAllCategories();
+            if(result.Count < 0) return BadRequest(result);
             return Ok(new
             {
                 Message = _localizer["Success"].Value,
-                Response = categories
+                Response = result
             });
         }
 

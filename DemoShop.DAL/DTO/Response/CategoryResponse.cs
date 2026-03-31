@@ -6,7 +6,9 @@ namespace DemoShop.DAL.DTO.Response
 {
     public class CategoryResponse
     {
-        public int Id { get; set; }
-        public List<CategoryTranslationResponse> Translations { get; set; }
+        public int CategoryId { get; set; }
+        public string UserCreated { get; set; }
+        public string CategoryName { get; set; }
+        //public List<CategoryTranslationResponse> Translations { get; set; }
     }
 }
