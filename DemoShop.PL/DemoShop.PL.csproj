@@ -19,4 +19,12 @@
     <ProjectReference Include="..\DemoShop.BLL\DemoShop.BLL.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\Images\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\Images\f3f4a7b8-0d68-4e7d-9b28-3f181649af3b.png" />
+  </ItemGroup>
+
 </Project>

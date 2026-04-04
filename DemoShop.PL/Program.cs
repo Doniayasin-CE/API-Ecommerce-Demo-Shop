@@ -75,8 +75,12 @@ namespace DemoShop.PL
             builder.Services.AddScoped<ISeedData, RoleSeedData>();
             // Register the IEmailSender Service
             builder.Services.AddTransient<IEmailSender, EmailSender>();
-            // Register the IEmailSender Service
+            // Register the AddHttpContextAccessor Service
             builder.Services.AddHttpContextAccessor();
+            //Register the Product Services
+            builder.Services.AddScoped<IProductRepository, ProductRepository>();
+            builder.Services.AddScoped<IProductService, ProductService>();
+            builder.Services.AddScoped<IFileService, FileService>();
 
             // 1.Register Identity and its core managers 2.Tell Identity to use our EF Core DbContext
             builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
@@ -138,6 +142,7 @@ namespace DemoShop.PL
             }
 
             app.UseHttpsRedirection();
+            app.UseStaticFiles();
             app.UseRouting();
             app.UseCors(MyAllowSpecificOrigins);
             app.UseAuthorization();

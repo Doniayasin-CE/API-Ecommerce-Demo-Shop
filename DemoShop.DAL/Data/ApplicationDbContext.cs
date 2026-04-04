@@ -13,6 +13,8 @@ namespace DemoShop.DAL.Data
 
         public DbSet<Category> Categories { get; set; }
         public DbSet<CategoryTranslation> CategoriesTranslations { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<ProductTranslation> ProductTranslations { get; set; }
        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options,
            IHttpContextAccessor HttpContextAccessor) 
             : base(options)
@@ -26,6 +28,30 @@ namespace DemoShop.DAL.Data
             builder.Entity<ApplicationUser>().ToTable("Users");
             builder.Entity<IdentityRole>().ToTable("Roles");
             builder.Entity<IdentityUserRole<string>>().ToTable("UserRoles");
+
+            // Category -> User Relationship
+            builder.Entity<Category>()
+                .HasOne(r=>r.CreatedBy)
+                .WithMany()
+                .HasForeignKey(fk=>fk.CreatedById)
+                .OnDelete(DeleteBehavior.Restrict);
+            builder.Entity<Category>()
+                .HasOne(r => r.UpdatedBy)
+                .WithMany()
+                .HasForeignKey(fk => fk.UpdatedById)
+                .OnDelete(DeleteBehavior.Restrict);
+            
+            // Product -> User Relationship
+            builder.Entity<Product>()
+                .HasOne(r => r.CreatedBy)
+                .WithMany()
+                .HasForeignKey(fk => fk.CreatedById)
+                .OnDelete(DeleteBehavior.Restrict);
+            builder.Entity<Product>()
+                .HasOne(r => r.UpdatedBy)
+                .WithMany()
+                .HasForeignKey(fk => fk.UpdatedById)
+                .OnDelete(DeleteBehavior.Restrict);
         }
 
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
