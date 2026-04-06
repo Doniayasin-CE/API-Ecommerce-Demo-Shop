@@ -85,6 +85,69 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "DemoShop.PL.Controllers.BrandsController",
+    "Method": "Index",
+    "RelativePath": "api/Brands",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DemoShop.PL.Controllers.BrandsController",
+    "Method": "Create",
+    "RelativePath": "api/Brands",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "MainLogo",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "Translations",
+        "Type": "System.Collections.Generic.List\u00601[[DemoShop.DAL.DTO.Request.BrandTranslationRequest, DemoShop.DAL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DemoShop.PL.Controllers.BrandsController",
+    "Method": "GetById",
+    "RelativePath": "api/Brands/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DemoShop.PL.Controllers.BrandsController",
+    "Method": "Delete",
+    "RelativePath": "api/Brands/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "DemoShop.PL.Controllers.CategoriesController",
     "Method": "Create",
     "RelativePath": "api/Categories",
@@ -186,6 +249,11 @@
         "IsRequired": false
       },
       {
+        "Name": "BrandId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
         "Name": "Translations",
         "Type": "System.Collections.Generic.List\u00601[[DemoShop.DAL.DTO.Request.ProductTranslationRequest, DemoShop.DAL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "IsRequired": false
@@ -195,7 +263,7 @@
   },
   {
     "ContainingType": "DemoShop.PL.Controllers.ProductsController",
-    "Method": "GetproductById",
+    "Method": "GetById",
     "RelativePath": "api/Products/{id}",
     "HttpMethod": "GET",
     "IsController": true,

@@ -81,6 +81,9 @@ namespace DemoShop.PL
             builder.Services.AddScoped<IProductRepository, ProductRepository>();
             builder.Services.AddScoped<IProductService, ProductService>();
             builder.Services.AddScoped<IFileService, FileService>();
+            //Register the Brand Services
+            builder.Services.AddScoped<IBrandRepository, BrandRepository>();
+            builder.Services.AddScoped<IBrandService, BrandService>();
 
             // 1.Register Identity and its core managers 2.Tell Identity to use our EF Core DbContext
             builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
@@ -145,8 +148,8 @@ namespace DemoShop.PL
             app.UseStaticFiles();
             app.UseRouting();
             app.UseCors(MyAllowSpecificOrigins);
-            app.UseAuthorization();
             app.UseAuthentication();
+            app.UseAuthorization();
             app.MapControllers();
 
             app.Run();

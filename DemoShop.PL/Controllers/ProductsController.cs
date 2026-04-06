@@ -25,7 +25,7 @@ namespace DemoShop.PL.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetproductById(int id)
+        public async Task<IActionResult> GetById(int id)
         {
             var result = await _productService.GetProduct(p => p.Id == id);
             if(result != null) return Ok(result);

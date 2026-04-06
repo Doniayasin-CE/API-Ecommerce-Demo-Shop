@@ -33,7 +33,11 @@ namespace DemoShop.BLL.Service
 
         public async Task<CategoryResponse?> GetCategory(Expression<Func<Category,bool>> filter)
         {
-            var category = await _categoryRepository.GetOneAsync(filter, new string[] {nameof(Category.Translations)});
+            var category = await _categoryRepository.GetOneAsync(filter,
+                new string[] {
+                    nameof(Category.Translations),
+                    nameof(Category.CreatedBy)
+                });
             return category.Adapt<CategoryResponse>();
         }
 

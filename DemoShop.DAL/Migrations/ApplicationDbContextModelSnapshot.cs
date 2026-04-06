@@ -103,6 +103,70 @@ namespace DemoShop.DAL.Migrations
                     b.ToTable("Users", (string)null);
                 });
 
+            modelBuilder.Entity("DemoShop.DAL.Models.Brand", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("CreatedById")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("MainLogo")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UpdatedById")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime?>("UpdatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CreatedById");
+
+                    b.HasIndex("UpdatedById");
+
+                    b.ToTable("Brands");
+                });
+
+            modelBuilder.Entity("DemoShop.DAL.Models.BrandTranslation", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("BrandId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Language")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BrandId");
+
+                    b.ToTable("BrandTranslations");
+                });
+
             modelBuilder.Entity("DemoShop.DAL.Models.Category", b =>
                 {
                     b.Property<int>("Id")
@@ -167,6 +231,9 @@ namespace DemoShop.DAL.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<int>("BrandId")
+                        .HasColumnType("int");
+
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
@@ -201,8 +268,9 @@ namespace DemoShop.DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CategoryId")
-                        .IsUnique();
+                    b.HasIndex("BrandId");
+
+                    b.HasIndex("CategoryId");
 
                     b.HasIndex("CreatedById");
 
@@ -374,6 +442,35 @@ namespace DemoShop.DAL.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("DemoShop.DAL.Models.Brand", b =>
+                {
+                    b.HasOne("DemoShop.DAL.Models.ApplicationUser", "CreatedBy")
+                        .WithMany()
+                        .HasForeignKey("CreatedById")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("DemoShop.DAL.Models.ApplicationUser", "UpdatedBy")
+                        .WithMany()
+                        .HasForeignKey("UpdatedById")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.Navigation("CreatedBy");
+
+                    b.Navigation("UpdatedBy");
+                });
+
+            modelBuilder.Entity("DemoShop.DAL.Models.BrandTranslation", b =>
+                {
+                    b.HasOne("DemoShop.DAL.Models.Brand", "Brand")
+                        .WithMany("Translations")
+                        .HasForeignKey("BrandId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Brand");
+                });
+
             modelBuilder.Entity("DemoShop.DAL.Models.Category", b =>
                 {
                     b.HasOne("DemoShop.DAL.Models.ApplicationUser", "CreatedBy")
@@ -405,9 +502,15 @@ namespace DemoShop.DAL.Migrations
 
             modelBuilder.Entity("DemoShop.DAL.Models.Product", b =>
                 {
+                    b.HasOne("DemoShop.DAL.Models.Brand", "Brand")
+                        .WithMany("Products")
+                        .HasForeignKey("BrandId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("DemoShop.DAL.Models.Category", "Category")
-                        .WithOne("Product")
-                        .HasForeignKey("DemoShop.DAL.Models.Product", "CategoryId")
+                        .WithMany("Products")
+                        .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -421,6 +524,8 @@ namespace DemoShop.DAL.Migrations
                         .WithMany()
                         .HasForeignKey("UpdatedById")
                         .OnDelete(DeleteBehavior.Restrict);
+
+                    b.Navigation("Brand");
 
                     b.Navigation("Category");
 
@@ -491,10 +596,16 @@ namespace DemoShop.DAL.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("DemoShop.DAL.Models.Brand", b =>
+                {
+                    b.Navigation("Products");
+
+                    b.Navigation("Translations");
+                });
+
             modelBuilder.Entity("DemoShop.DAL.Models.Category", b =>
                 {
-                    b.Navigation("Product")
-                        .IsRequired();
+                    b.Navigation("Products");
 
                     b.Navigation("Translations");
                 });

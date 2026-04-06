@@ -12,6 +12,7 @@ namespace DemoShop.DAL.DTO.Request
         public int Quantity { get; set; }
         public IFormFile MainImage { get; set; }
         public int CategoryId { get; set; }
+        public int BrandId { get; set; }
         public List<ProductTranslationRequest> Translations { get; set; }
     }
 }

@@ -30,6 +30,14 @@ namespace DemoShop.BLL.Mapping
                     .Select(T => T.Name).FirstOrDefault()
                 )
                 .Map(dest => dest.MainImage, src => $"https://localhost:7043/Images/{src.MainImage}");
+            // Brand Mapster Configuration
+            TypeAdapterConfig<Brand, BrandResponse>.NewConfig()
+                .Map(dest => dest.UserCreated, src => src.CreatedBy.UserName)
+                .Map(dest => dest.Name, src => src.Translations.Where(
+                    lang => lang.Language == CultureInfo.CurrentCulture.Name)
+                    .Select(T => T.Name).FirstOrDefault()
+                )
+                .Map(dest => dest.MainLogo, src => $"https://localhost:7043/Images/{src.MainLogo}");
         }
     }
 }

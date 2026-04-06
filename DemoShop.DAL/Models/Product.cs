@@ -14,6 +14,8 @@ namespace DemoShop.DAL.Models
         public double Rate { get; set; }
         public int CategoryId { get; set; }
         public Category Category { get; set; } = null!;
+        public int BrandId { get; set; }
+        public Brand Brand { get; set; } = null!;
         public List<ProductTranslation> Translations { get; set; } = null!;
     }
 }
