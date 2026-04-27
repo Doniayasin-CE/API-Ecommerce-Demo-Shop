@@ -14,5 +14,6 @@ namespace DemoShop.BLL.Service
         Task<List<BrandResponse>> GetAllBrands();
         Task<BrandResponse?> GetBrand(Expression<Func<Brand, bool>> filter);
         Task<bool> DeleteBrand(int id);
+        Task<bool> ToggleStatus(int id);
     }
 }

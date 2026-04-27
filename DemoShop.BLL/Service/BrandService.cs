@@ -34,6 +34,7 @@ namespace DemoShop.BLL.Service
         public async Task<List<BrandResponse>> GetAllBrands()
         {
             var brands = await _brandRepository.GetAllAsync(
+                b => b.Status == EntityStatus.Active,
                 new string[]
                 {
                     nameof(Brand.Translations),
@@ -63,6 +64,18 @@ namespace DemoShop.BLL.Service
             if(brand is null) return false;
             _fileService.DeleteAsync(brand.MainLogo);
             return await _brandRepository.DeleteAsync(brand);
+        }
+
+        public async Task<bool> ToggleStatus(int id)
+        {
+            var brand = await _brandRepository.GetOneAsync(p => p.Id == id);
+            if (brand == null) return false;
+
+            brand.Status = brand.Status == EntityStatus.Active
+                ? EntityStatus.InActive
+                : EntityStatus.Active;
+
+            return await _brandRepository.UpdateAsync(brand);
         }
     }
 }

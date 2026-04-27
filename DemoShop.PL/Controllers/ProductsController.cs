@@ -40,6 +40,24 @@ namespace DemoShop.PL.Controllers
             return Ok();
         }
 
+        [HttpPatch("{id}")]
+        [Authorize]
+        public async Task<IActionResult> Update(int id, [FromForm] ProductUpdateRequest request)
+        {
+            var result = await _productService.UpdateProduct(id, request);
+            if(!result) return BadRequest(result);
+            return Ok();
+        }
+
+        [HttpPatch("{id}/status")]
+        [Authorize]
+        public async Task<IActionResult> ChangeStatus(int id)
+        {
+            var result = await _productService.ToggleStatus(id);
+            if(!result) return NotFound(result);
+            return Ok();
+        }
+
         [HttpDelete("{id}")]
         [Authorize]
         public async Task<IActionResult> Delete(int id)

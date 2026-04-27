@@ -12,5 +12,6 @@ namespace DemoShop.BLL.Service
         Task<CategoryResponse> CreateCategory(CategoryRequest req);
         Task<CategoryResponse?> GetCategory(Expression<Func<Category, bool>> filter);
         Task<bool> DeleteCategory(int id);
+        Task<bool> ToggleStatus(int id);
     }
 }

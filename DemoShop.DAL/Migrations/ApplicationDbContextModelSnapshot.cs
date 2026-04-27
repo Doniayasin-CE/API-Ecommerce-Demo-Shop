@@ -122,6 +122,9 @@ namespace DemoShop.DAL.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
                     b.Property<string>("UpdatedById")
                         .HasColumnType("nvarchar(450)");
 
@@ -167,6 +170,24 @@ namespace DemoShop.DAL.Migrations
                     b.ToTable("BrandTranslations");
                 });
 
+            modelBuilder.Entity("DemoShop.DAL.Models.Cart", b =>
+                {
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("Count")
+                        .HasColumnType("int");
+
+                    b.HasKey("ProductId", "UserId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Carts");
+                });
+
             modelBuilder.Entity("DemoShop.DAL.Models.Category", b =>
                 {
                     b.Property<int>("Id")
@@ -181,6 +202,9 @@ namespace DemoShop.DAL.Migrations
 
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
 
                     b.Property<string>("UpdatedById")
                         .HasColumnType("nvarchar(450)");
@@ -259,6 +283,9 @@ namespace DemoShop.DAL.Migrations
 
                     b.Property<double>("Rate")
                         .HasColumnType("float");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
 
                     b.Property<string>("UpdatedById")
                         .HasColumnType("nvarchar(450)");
@@ -471,6 +498,25 @@ namespace DemoShop.DAL.Migrations
                     b.Navigation("Brand");
                 });
 
+            modelBuilder.Entity("DemoShop.DAL.Models.Cart", b =>
+                {
+                    b.HasOne("DemoShop.DAL.Models.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DemoShop.DAL.Models.ApplicationUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("DemoShop.DAL.Models.Category", b =>
                 {
                     b.HasOne("DemoShop.DAL.Models.ApplicationUser", "CreatedBy")
@@ -505,13 +551,13 @@ namespace DemoShop.DAL.Migrations
                     b.HasOne("DemoShop.DAL.Models.Brand", "Brand")
                         .WithMany("Products")
                         .HasForeignKey("BrandId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("DemoShop.DAL.Models.Category", "Category")
                         .WithMany("Products")
                         .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("DemoShop.DAL.Models.ApplicationUser", "CreatedBy")

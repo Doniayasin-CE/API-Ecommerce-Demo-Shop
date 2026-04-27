@@ -42,6 +42,15 @@ namespace DemoShop.PL.Controllers
             return Ok(request);
         }
 
+        [HttpPatch("{id}/status")]
+        [Authorize]
+        public async Task<IActionResult> ChangeStatus(int id)
+        {
+            var result = await _brandService.ToggleStatus(id);
+            if (!result) return NotFound(result);
+            return Ok();
+        }
+
         [HttpDelete("{id}")]
         [Authorize]
         public async Task<IActionResult> Delete(int id)

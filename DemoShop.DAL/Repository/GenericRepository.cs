@@ -19,9 +19,12 @@ namespace DemoShop.DAL.Repository
             return entity;
         }
 
-        public async Task<List<T>> GetAllAsync(String[]? includes = null)
+        public async Task<List<T>> GetAllAsync(Expression<Func<T, bool>> filter = null,String[]? includes = null)
         {
             IQueryable<T> query = _context.Set<T>(); //select * from entity
+            
+            if(filter != null)  query = query.Where(filter);
+
             if(includes != null && includes.Length > 0)
             {
                 foreach(var include in includes)
@@ -29,7 +32,6 @@ namespace DemoShop.DAL.Repository
                     query = query.Include(include); //.Include(c => c.Translations).Include(p => p.Products)...
                 }
             }
-            
             return await query.ToListAsync();
         }
 
@@ -51,6 +53,19 @@ namespace DemoShop.DAL.Repository
             _context.Remove(entity);
             var affectedRows = await _context.SaveChangesAsync();
             return affectedRows > 0;
+        }
+
+        public async Task<bool> UpdateAsync(T entity)
+        {
+            _context.Update(entity);
+            var affectedRows = await _context.SaveChangesAsync();
+            return affectedRows > 0;
+        }
+
+        public async Task<bool> DeleteRangeAsync(List<T> entities)
+        {
+           _context.RemoveRange(entities);
+            return await _context.SaveChangesAsync() > 0;
         }
     }
 }

@@ -52,6 +52,15 @@ namespace DemoShop.PL.Controllers
             return Ok(await _categoryService.GetCategory(c => c.Id == id));
         }
 
+        [HttpPatch("{id}/status")]
+        [Authorize]
+        public async Task<IActionResult> ChangeStatus(int id)
+        {
+            var result = await _categoryService.ToggleStatus(id);
+            if (!result) return NotFound(result);
+            return Ok();
+        }
+
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {

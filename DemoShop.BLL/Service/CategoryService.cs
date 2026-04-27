@@ -24,6 +24,7 @@ namespace DemoShop.BLL.Service
         public async Task<List<CategoryResponse>> GetAllCategories()
         {
             var categories = await _categoryRepository.GetAllAsync(
+                c => c.Status == EntityStatus.Active,
                 new String[] {
                     nameof(Category.Translations),
                     nameof(Category.CreatedBy)
@@ -46,6 +47,18 @@ namespace DemoShop.BLL.Service
             var category = await _categoryRepository.GetOneAsync(c => c.Id == id);
             if (category == null) return false;
             return await _categoryRepository.DeleteAsync(category);
+        }
+
+        public async Task<bool> ToggleStatus(int id)
+        {
+            var category = await _categoryRepository.GetOneAsync(p => p.Id == id);
+            if (category == null) return false;
+
+            category.Status = category.Status == EntityStatus.Active
+                ? EntityStatus.InActive
+                : EntityStatus.Active;
+
+            return await _categoryRepository.UpdateAsync(category);
         }
 
     }

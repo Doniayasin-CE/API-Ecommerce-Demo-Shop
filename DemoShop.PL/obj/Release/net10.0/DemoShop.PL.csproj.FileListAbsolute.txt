@@ -172,3 +172,4 @@ C:\Users\PC\Documents\backend-ASP\API\DemoShop\DemoShop.PL\obj\Release\net10.0\D
 C:\Users\PC\Documents\backend-ASP\API\DemoShop\DemoShop.PL\obj\Release\net10.0\DemoShop.PL.genruntimeconfig.cache
 C:\Users\PC\Documents\backend-ASP\API\DemoShop\DemoShop.PL\obj\Release\net10.0\ref\DemoShop.PL.dll
 C:\Users\PC\Documents\backend-ASP\API\DemoShop\DemoShop.PL\bin\Release\net10.0\dotnet-tools.json
+C:\Users\PC\Documents\backend-ASP\API\DemoShop\DemoShop.PL\bin\Release\net10.0\DemoShop.PL.staticwebassets.runtime.json

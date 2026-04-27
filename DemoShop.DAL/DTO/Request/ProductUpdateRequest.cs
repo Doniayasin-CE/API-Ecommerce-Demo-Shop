@@ -1,0 +1,18 @@
+﻿using Microsoft.AspNetCore.Http;
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace DemoShop.DAL.DTO.Request
+{
+    public class ProductUpdateRequest
+    {
+        public decimal? Price { get; set; }
+        public decimal? Discount { get; set; }
+        public int? Quantity { get; set; }
+        public IFormFile? MainImage { get; set; }
+        public int? CategoryId { get; set; }
+        public int? BrandId { get; set; }
+        public List<ProductTranslationRequest>? Translations { get; set; }
+    }
+}

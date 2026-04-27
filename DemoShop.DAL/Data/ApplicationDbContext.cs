@@ -17,6 +17,7 @@ namespace DemoShop.DAL.Data
         public DbSet<ProductTranslation> ProductTranslations { get; set; }
         public DbSet<Brand> Brands { get; set; }
         public DbSet<BrandTranslation> BrandTranslations { get; set; }
+        public DbSet<Cart> Carts { get; set; }
        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options,
            IHttpContextAccessor HttpContextAccessor) 
             : base(options)
@@ -54,7 +55,18 @@ namespace DemoShop.DAL.Data
                 .WithMany()
                 .HasForeignKey(fk => fk.UpdatedById)
                 .OnDelete(DeleteBehavior.Restrict);
-
+            // Product -> Category Relationship
+            builder.Entity<Product>()
+                .HasOne(p => p.Category) //Product Relation side
+                .WithMany(c => c.Products) //Category Relation side
+                .HasForeignKey(p => p.CategoryId)
+                .OnDelete(DeleteBehavior.Restrict);
+            // Product -> Brand Relationship
+            builder.Entity<Product>()
+               .HasOne(p => p.Brand) //Product Relation side
+               .WithMany(c => c.Products) //Brand Relation side
+               .HasForeignKey(p => p.BrandId)
+               .OnDelete(DeleteBehavior.Restrict);
             // Brand -> User Relationship
             builder.Entity<Brand>()
                 .HasOne(r => r.CreatedBy)

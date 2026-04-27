@@ -10,6 +10,7 @@ namespace DemoShop.DAL.DTO.Response
         public string Name { get; set; }
         public decimal Price { get; set; }
         public string MainImage { get; set; }
+        public int Quantity { get; set; }
         public string UserCreated { get; set; }
     }
 }

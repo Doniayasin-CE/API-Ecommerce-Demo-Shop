@@ -3,24 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\PC\\Documents\\backend-ASP\\API\\DemoShop\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D0E355C7-C778-1E68-8A2B-5A574C729B66}|DemoShop.DAL\\DemoShop.DAL.csproj|c:\\users\\pc\\documents\\backend-asp\\api\\demoshop\\demoshop.dal\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D0E355C7-C778-1E68-8A2B-5A574C729B66}|DemoShop.DAL\\DemoShop.DAL.csproj|solutionrelative:demoshop.dal\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C9842DBA-BCCD-CA4E-4B23-3C2BFD32E646}|DemoShop.PL\\DemoShop.PL.csproj|c:\\users\\pc\\documents\\backend-asp\\api\\demoshop\\demoshop.pl\\controllers\\cartscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C9842DBA-BCCD-CA4E-4B23-3C2BFD32E646}|DemoShop.PL\\DemoShop.PL.csproj|solutionrelative:demoshop.pl\\controllers\\cartscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C9842DBA-BCCD-CA4E-4B23-3C2BFD32E646}|DemoShop.PL\\DemoShop.PL.csproj|c:\\users\\pc\\documents\\backend-asp\\api\\demoshop\\demoshop.pl\\controllers\\brandscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C9842DBA-BCCD-CA4E-4B23-3C2BFD32E646}|DemoShop.PL\\DemoShop.PL.csproj|solutionrelative:demoshop.pl\\controllers\\brandscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{041E9700-C23C-1399-A8CD-4533AB2E6CBD}|DemoShop.BLL\\DemoShop.BLL.csproj|c:\\users\\pc\\documents\\backend-asp\\api\\demoshop\\demoshop.bll\\service\\cartservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{041E9700-C23C-1399-A8CD-4533AB2E6CBD}|DemoShop.BLL\\DemoShop.BLL.csproj|solutionrelative:demoshop.bll\\service\\cartservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C9842DBA-BCCD-CA4E-4B23-3C2BFD32E646}|DemoShop.PL\\DemoShop.PL.csproj|c:\\users\\pc\\documents\\backend-asp\\api\\demoshop\\demoshop.pl\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C9842DBA-BCCD-CA4E-4B23-3C2BFD32E646}|DemoShop.PL\\DemoShop.PL.csproj|solutionrelative:demoshop.pl\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{041E9700-C23C-1399-A8CD-4533AB2E6CBD}|DemoShop.BLL\\DemoShop.BLL.csproj|c:\\users\\pc\\documents\\backend-asp\\api\\demoshop\\demoshop.bll\\service\\brandservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{041E9700-C23C-1399-A8CD-4533AB2E6CBD}|DemoShop.BLL\\DemoShop.BLL.csproj|solutionrelative:demoshop.bll\\service\\brandservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{041E9700-C23C-1399-A8CD-4533AB2E6CBD}|DemoShop.BLL\\DemoShop.BLL.csproj|c:\\users\\pc\\documents\\backend-asp\\api\\demoshop\\demoshop.bll\\service\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{041E9700-C23C-1399-A8CD-4533AB2E6CBD}|DemoShop.BLL\\DemoShop.BLL.csproj|solutionrelative:demoshop.bll\\service\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{041E9700-C23C-1399-A8CD-4533AB2E6CBD}|DemoShop.BLL\\DemoShop.BLL.csproj|c:\\users\\pc\\documents\\backend-asp\\api\\demoshop\\demoshop.bll\\service\\icartservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{041E9700-C23C-1399-A8CD-4533AB2E6CBD}|DemoShop.BLL\\DemoShop.BLL.csproj|solutionrelative:demoshop.bll\\service\\icartservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -29,85 +21,65 @@
       "VerticalTabListWidth": 219,
       "DocumentGroups": [
         {
-          "DockedHeight": 75,
-          "SelectedChildIndex": 0,
+          "DockedHeight": 142,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ApplicationDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\Documents\\backend-ASP\\API\\DemoShop\\DemoShop.DAL\\Data\\ApplicationDbContext.cs",
-              "RelativeDocumentMoniker": "DemoShop.DAL\\Data\\ApplicationDbContext.cs",
-              "ToolTip": "C:\\Users\\PC\\Documents\\backend-ASP\\API\\DemoShop\\DemoShop.DAL\\Data\\ApplicationDbContext.cs",
-              "RelativeToolTip": "DemoShop.DAL\\Data\\ApplicationDbContext.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAwwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-06T21:08:41.119Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "ProductsController.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\Documents\\backend-ASP\\API\\DemoShop\\DemoShop.PL\\Controllers\\ProductsController.cs",
-              "RelativeDocumentMoniker": "DemoShop.PL\\Controllers\\ProductsController.cs",
-              "ToolTip": "C:\\Users\\PC\\Documents\\backend-ASP\\API\\DemoShop\\DemoShop.PL\\Controllers\\ProductsController.cs",
-              "RelativeToolTip": "DemoShop.PL\\Controllers\\ProductsController.cs",
-              "ViewState": "AgIAACMAAAAAAAAAAAAgwBsAAAA4AAAAAAAAAA==",
+              "Title": "ICartService.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Documents\\backend-ASP\\API\\DemoShop\\DemoShop.BLL\\Service\\ICartService.cs",
+              "RelativeDocumentMoniker": "DemoShop.BLL\\Service\\ICartService.cs",
+              "ToolTip": "C:\\Users\\PC\\Documents\\backend-ASP\\API\\DemoShop\\DemoShop.BLL\\Service\\ICartService.cs",
+              "RelativeToolTip": "DemoShop.BLL\\Service\\ICartService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-06T20:00:08.774Z",
+              "WhenOpened": "2026-04-27T21:41:27.201Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
             },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CartsController.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Documents\\backend-ASP\\API\\DemoShop\\DemoShop.PL\\Controllers\\CartsController.cs",
+              "RelativeDocumentMoniker": "DemoShop.PL\\Controllers\\CartsController.cs",
+              "ToolTip": "C:\\Users\\PC\\Documents\\backend-ASP\\API\\DemoShop\\DemoShop.PL\\Controllers\\CartsController.cs",
+              "RelativeToolTip": "DemoShop.PL\\Controllers\\CartsController.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAAAkwCcAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-23T14:44:43.217Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "BrandsController.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\Documents\\backend-ASP\\API\\DemoShop\\DemoShop.PL\\Controllers\\BrandsController.cs",
-              "RelativeDocumentMoniker": "DemoShop.PL\\Controllers\\BrandsController.cs",
-              "ToolTip": "C:\\Users\\PC\\Documents\\backend-ASP\\API\\DemoShop\\DemoShop.PL\\Controllers\\BrandsController.cs",
-              "RelativeToolTip": "DemoShop.PL\\Controllers\\BrandsController.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAADUAAAAFAAAAAAAAAA==",
+              "Title": "CartService.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Documents\\backend-ASP\\API\\DemoShop\\DemoShop.BLL\\Service\\CartService.cs",
+              "RelativeDocumentMoniker": "DemoShop.BLL\\Service\\CartService.cs",
+              "ToolTip": "C:\\Users\\PC\\Documents\\backend-ASP\\API\\DemoShop\\DemoShop.BLL\\Service\\CartService.cs",
+              "RelativeToolTip": "DemoShop.BLL\\Service\\CartService.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAA1wFEAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-06T00:52:26.392Z",
+              "WhenOpened": "2026-04-21T00:10:15.31Z",
               "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedHeight": 8,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ProductService.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\Documents\\backend-ASP\\API\\DemoShop\\DemoShop.BLL\\Service\\ProductService.cs",
-              "RelativeDocumentMoniker": "DemoShop.BLL\\Service\\ProductService.cs",
-              "ToolTip": "C:\\Users\\PC\\Documents\\backend-ASP\\API\\DemoShop\\DemoShop.BLL\\Service\\ProductService.cs",
-              "RelativeToolTip": "DemoShop.BLL\\Service\\ProductService.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAQwC4AAABeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-06T00:42:59.377Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "BrandService.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\Documents\\backend-ASP\\API\\DemoShop\\DemoShop.BLL\\Service\\BrandService.cs",
-              "RelativeDocumentMoniker": "DemoShop.BLL\\Service\\BrandService.cs",
-              "ToolTip": "C:\\Users\\PC\\Documents\\backend-ASP\\API\\DemoShop\\DemoShop.BLL\\Service\\BrandService.cs",
-              "RelativeToolTip": "DemoShop.BLL\\Service\\BrandService.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAUwEQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-06T00:29:34.466Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             }
           ]
         }

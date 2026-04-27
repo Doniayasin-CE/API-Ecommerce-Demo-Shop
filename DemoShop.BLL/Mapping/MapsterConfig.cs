@@ -1,4 +1,5 @@
-﻿using DemoShop.DAL.DTO.Response;
+﻿using DemoShop.DAL.DTO.Request;
+using DemoShop.DAL.DTO.Response;
 using DemoShop.DAL.Models;
 using Mapster;
 using System;
@@ -30,6 +31,10 @@ namespace DemoShop.BLL.Mapping
                     .Select(T => T.Name).FirstOrDefault()
                 )
                 .Map(dest => dest.MainImage, src => $"https://localhost:7043/Images/{src.MainImage}");
+            // Product Update Mapster Configuration
+            TypeAdapterConfig<ProductUpdateRequest, Product>.NewConfig()
+                .IgnoreNullValues(true); 
+
             // Brand Mapster Configuration
             TypeAdapterConfig<Brand, BrandResponse>.NewConfig()
                 .Map(dest => dest.UserCreated, src => src.CreatedBy.UserName)
@@ -38,6 +43,16 @@ namespace DemoShop.BLL.Mapping
                     .Select(T => T.Name).FirstOrDefault()
                 )
                 .Map(dest => dest.MainLogo, src => $"https://localhost:7043/Images/{src.MainLogo}");
+
+            // Cart Mapster Configuration
+            TypeAdapterConfig<Cart, CartResponse>.NewConfig()
+                .Map(dest => dest.ProductName, src => src.Product.Translations.Where(
+                    lang => lang.Language == CultureInfo.CurrentCulture.Name)
+                    .Select(T => T.Name).FirstOrDefault()
+                )
+                .Map(dest => dest.Price, src => src.Product.Price)
+                .Map(dest => dest.Discount, src => src.Product.Discount)
+                .Map(dest => dest.ProductImg, src => $"https://localhost:7043/Images/{src.Product.MainImage}");
         }
     }
 }
