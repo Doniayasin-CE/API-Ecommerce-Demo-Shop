@@ -10,5 +10,6 @@ namespace DemoShop.BLL.Service
         Task<bool> ConfirmEmail(string token, string userId);
         Task<ForgetPasswordResponse> RequestPasswordReset(ForgetPasswordRequest request);
         Task<ResetPasswordResponse> ResetPassword(ResetPasswordRequest request);
+        Task<LoginResponse> RefreshTokenReissue();
     }
 }

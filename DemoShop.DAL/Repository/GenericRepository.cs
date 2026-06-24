@@ -35,6 +35,23 @@ namespace DemoShop.DAL.Repository
             return await query.ToListAsync();
         }
 
+        //GetQueryable 
+        public IQueryable<T> GetQueryable(Expression<Func<T, bool>> filter = null, String[]? includes = null)
+        {
+            IQueryable<T> query = _context.Set<T>(); //select * from entity
+
+            if (filter != null) query = query.Where(filter);
+
+            if (includes != null && includes.Length > 0)
+            {
+                foreach (var include in includes)
+                {
+                    query = query.Include(include);
+                }
+            }
+            return query;
+        }
+
         public async Task<T?> GetOneAsync(Expression<Func<T,bool>> filter, String[]? includes = null)
         {
             IQueryable<T> query = _context.Set<T>();
@@ -65,6 +82,12 @@ namespace DemoShop.DAL.Repository
         public async Task<bool> DeleteRangeAsync(List<T> entities)
         {
            _context.RemoveRange(entities);
+            return await _context.SaveChangesAsync() > 0;
+        }
+
+        public async Task<bool> UpdateRangeAsync(List<T> entities)
+        {
+            _context.UpdateRange(entities);
             return await _context.SaveChangesAsync() > 0;
         }
     }

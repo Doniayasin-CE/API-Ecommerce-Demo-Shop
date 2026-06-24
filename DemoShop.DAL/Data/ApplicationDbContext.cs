@@ -18,6 +18,9 @@ namespace DemoShop.DAL.Data
         public DbSet<Brand> Brands { get; set; }
         public DbSet<BrandTranslation> BrandTranslations { get; set; }
         public DbSet<Cart> Carts { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<Orderltem> Orderltems { get; set; }
+        public DbSet<ProductImage> ProductImages { get; set; }
        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options,
            IHttpContextAccessor HttpContextAccessor) 
             : base(options)

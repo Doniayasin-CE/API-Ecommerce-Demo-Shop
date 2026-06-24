@@ -6,6 +6,7 @@ using Mapster;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.Data;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
@@ -73,11 +74,15 @@ namespace DemoShop.BLL.Service
             if (!result)
                 return new LoginResponse() { Success = false, Message = "Invalid password" };
 
+            //GenerateRefreshToken
+            var refreshToken = await GenerateRefreshToken(user);
+            SetRefreshTokenInCookie(refreshToken);
+
             return new LoginResponse() 
             { 
                 Success = true, 
                 Message= "success Login",
-                AccessToken = await GenerateAccessToken(user)
+                AccessToken = await GenerateAccessToken(user) //GenerateAccessToken
             };
         }
 
@@ -102,6 +107,58 @@ namespace DemoShop.BLL.Service
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
 
+        private async Task<string> GenerateRefreshToken(ApplicationUser user)
+        {
+            var refreshToken = Guid.NewGuid().ToString();
+            user.RefreshToken = refreshToken;
+            user.RefreshTokenExpiry = DateTime.UtcNow.AddDays(15);
+            await _userManager.UpdateAsync(user);
+            return refreshToken;
+        }
+
+        private void SetRefreshTokenInCookie(string refreshToken)
+        {
+            _httpContextAccessor.HttpContext!.Response.Cookies
+                .Append("refreshToken", refreshToken, new CookieOptions
+                {
+                    HttpOnly = true,
+                    Secure = false, //true for production and false for development
+                    SameSite = SameSiteMode.None, //Strict for production and None for development
+                    Expires = DateTime.UtcNow.AddDays(15)
+                });
+        }
+
+        public async Task<LoginResponse> RefreshTokenReissue()
+        {
+            var refreshToken = _httpContextAccessor.HttpContext!.Request.Cookies["refreshToken"];
+            if( refreshToken == null)
+            {
+                return new LoginResponse
+                {
+                    Success = false,
+                    Message = "The refresh token does not exist"
+                };
+            }
+
+            var user = await _userManager.Users.FirstOrDefaultAsync(u => u.RefreshToken == refreshToken);
+            if(user!.RefreshTokenExpiry < DateTime.UtcNow)
+            {
+                return new LoginResponse
+                {
+                    Success = false,
+                    Message = "The refresh token expired"
+                };
+            }
+
+            var newRefreshToken = await GenerateRefreshToken(user);
+            SetRefreshTokenInCookie(newRefreshToken);
+            return new LoginResponse()
+            {
+                Success = true,
+                Message = "success Login",
+                AccessToken = await GenerateAccessToken(user) //GenerateAccessToken
+            };
+        }
         public async Task<bool> ConfirmEmail(string token, string userId)
         {
             var user = await _userManager.FindByIdAsync(userId);

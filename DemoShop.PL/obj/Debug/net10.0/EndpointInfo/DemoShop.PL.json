@@ -169,6 +169,18 @@
         }
       }
     },
+    "/api/Account/refresh": {
+      "post": {
+        "tags": [
+          "Account"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Brands": {
       "get": {
         "tags": [
@@ -536,10 +548,96 @@
         }
       }
     },
+    "/api/Checkouts": {
+      "post": {
+        "tags": [
+          "Checkouts"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CheckoutRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CheckoutRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CheckoutRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Checkouts/success": {
+      "get": {
+        "tags": [
+          "Checkouts"
+        ],
+        "parameters": [
+          {
+            "name": "sessionId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Products": {
       "get": {
         "tags": [
           "Products"
+        ],
+        "parameters": [
+          {
+            "name": "Page",
+            "in": "query",
+            "schema": {
+              "pattern": "^-?(?:0|[1-9]\\d*)$",
+              "type": [
+                "integer",
+                "string"
+              ],
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Limit",
+            "in": "query",
+            "schema": {
+              "pattern": "^-?(?:0|[1-9]\\d*)$",
+              "type": [
+                "integer",
+                "string"
+              ],
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Search",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
         ],
         "responses": {
           "200": {
@@ -583,6 +681,12 @@
                   },
                   "MainImage": {
                     "$ref": "#/components/schemas/IFormFile"
+                  },
+                  "SubImages": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/IFormFile"
+                    }
                   },
                   "CategoryId": {
                     "pattern": "^-?(?:0|[1-9]\\d*)$",
@@ -696,6 +800,18 @@
                   },
                   "MainImage": {
                     "$ref": "#/components/schemas/IFormFile"
+                  },
+                  "SubImages": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/IFormFile"
+                    }
+                  },
+                  "NewImages": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/IFormFile"
+                    }
                   },
                   "CategoryId": {
                     "pattern": "^-?(?:0|[1-9]\\d*)$",
@@ -883,6 +999,32 @@
           }
         }
       },
+      "CheckoutRequest": {
+        "type": "object",
+        "properties": {
+          "paymentMethod": {
+            "$ref": "#/components/schemas/PaymentMethod"
+          },
+          "city": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "street": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "phoneNumber": {
+            "type": [
+              "null",
+              "string"
+            ]
+          }
+        }
+      },
       "ForgetPasswordRequest": {
         "type": "object",
         "properties": {
@@ -905,6 +1047,12 @@
             "type": "string"
           }
         }
+      },
+      "PaymentMethod": {
+        "enum": [
+          "Cash",
+          "Visa"
+        ]
       },
       "ProductTranslationRequest": {
         "type": "object",
@@ -1012,6 +1160,9 @@
     },
     {
       "name": "Categories"
+    },
+    {
+      "name": "Checkouts"
     },
     {
       "name": "Products"

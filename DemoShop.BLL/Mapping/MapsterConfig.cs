@@ -23,6 +23,7 @@ namespace DemoShop.BLL.Mapping
                     land => land.Language == CultureInfo.CurrentCulture.Name)
                     .Select(T => T.Name).FirstOrDefault()
                 );
+
             // Product Mapster Configuration
             TypeAdapterConfig<Product, ProductResponse>.NewConfig()
                 .Map(dest => dest.UserCreated, src => src.CreatedBy.UserName)
@@ -30,11 +31,14 @@ namespace DemoShop.BLL.Mapping
                     lang => lang.Language == CultureInfo.CurrentCulture.Name)
                     .Select(T => T.Name).FirstOrDefault()
                 )
-                .Map(dest => dest.MainImage, src => $"https://localhost:7043/Images/{src.MainImage}");
+                .Map(dest => dest.MainImage, src => $"https://localhost:7043/Images/{src.MainImage}")
+                .Map(dest => dest.SubImages, src => src.Images.Select(i => $"https://localhost:7043/Images/{i.ImagePath}"));
+            
             // Product Update Mapster Configuration
             TypeAdapterConfig<ProductUpdateRequest, Product>.NewConfig()
                 .IgnoreNullValues(true); 
 
+            
             // Brand Mapster Configuration
             TypeAdapterConfig<Brand, BrandResponse>.NewConfig()
                 .Map(dest => dest.UserCreated, src => src.CreatedBy.UserName)

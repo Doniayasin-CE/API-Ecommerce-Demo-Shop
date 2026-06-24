@@ -27,7 +27,7 @@ namespace DemoShop.PL
             builder.Services.AddLocalizationServices();
 
             // Register the Application Services
-            builder.Services.AddApplicationServices();
+            builder.Services.AddApplicationServices(builder.Configuration);
 
             // 1.Register Identity and its core managers 2.Tell Identity to use our EF Core DbContext
             builder.Services.AddIdentityServices();

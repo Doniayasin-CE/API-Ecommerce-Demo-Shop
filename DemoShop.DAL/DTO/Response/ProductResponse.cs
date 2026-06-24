@@ -12,5 +12,6 @@ namespace DemoShop.DAL.DTO.Response
         public string MainImage { get; set; }
         public int Quantity { get; set; }
         public string UserCreated { get; set; }
+        public List<string> SubImages { get; set; }
     }
 }

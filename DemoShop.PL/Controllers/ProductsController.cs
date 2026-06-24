@@ -17,11 +17,11 @@ namespace DemoShop.PL.Controllers
         }
 
         [HttpGet("")]
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index([FromQuery] PaginationRequest request)
         {
-            var result = await _productService.GetAllProducts();
-            if (result.Count > 0) return Ok(result);
-            return BadRequest();
+            var result = await _productService.GetAllProducts(request);
+            if (result is null) return BadRequest(result);
+            return Ok(result);
         }
 
         [HttpGet("{id}")]

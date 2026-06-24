@@ -60,5 +60,13 @@ namespace DemoShop.PL.Controllers
                 return BadRequest(result);
             return Ok(result);
         }
+
+        [HttpPost("refresh")]
+        public async Task<IActionResult> RenewRefreshToken()
+        {
+            var result = await _authenticationService.RefreshTokenReissue();
+            if (!result.Success) return Unauthorized(result);
+            return Ok(result);
+        }
     }
 }

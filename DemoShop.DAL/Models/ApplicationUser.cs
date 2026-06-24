@@ -12,5 +12,7 @@ namespace DemoShop.DAL.Models
         public string? Street { get; set; }
         public string? CodeResetPassword { get; set; }
         public DateTime? CodeResetPasswordExpiry { get; set; }
+        public string? RefreshToken { get; set; }
+        public DateTime? RefreshTokenExpiry {  get; set; }
     }
 }

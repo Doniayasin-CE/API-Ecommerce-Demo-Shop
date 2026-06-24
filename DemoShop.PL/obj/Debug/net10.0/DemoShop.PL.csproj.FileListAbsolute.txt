@@ -173,3 +173,4 @@ C:\Users\PC\Documents\backend-ASP\API\DemoShop\DemoShop.PL\obj\Debug\net10.0\Dem
 C:\Users\PC\Documents\backend-ASP\API\DemoShop\DemoShop.PL\obj\Debug\net10.0\DemoShop.PL.genruntimeconfig.cache
 C:\Users\PC\Documents\backend-ASP\API\DemoShop\DemoShop.PL\obj\Debug\net10.0\ref\DemoShop.PL.dll
 C:\Users\PC\Documents\backend-ASP\API\DemoShop\DemoShop.PL\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
+C:\Users\PC\Documents\backend-ASP\API\DemoShop\DemoShop.PL\bin\Debug\net10.0\Stripe.net.dll

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DemoShop.DAL")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6cf44342c7f50bc3504a3059ed57acce8611adbd")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8bb0bd61fb936b5b2b5a1ea9156a1daedcb74864")]
 [assembly: System.Reflection.AssemblyProductAttribute("DemoShop.DAL")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DemoShop.DAL")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

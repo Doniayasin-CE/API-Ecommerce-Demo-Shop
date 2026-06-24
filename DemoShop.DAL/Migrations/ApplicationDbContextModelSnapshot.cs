@@ -77,6 +77,12 @@ namespace DemoShop.DAL.Migrations
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("bit");
 
+                    b.Property<string>("RefreshToken")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("RefreshTokenExpiry")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
 
@@ -247,6 +253,79 @@ namespace DemoShop.DAL.Migrations
                     b.ToTable("CategoriesTranslations");
                 });
 
+            modelBuilder.Entity("DemoShop.DAL.Models.Order", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("City")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("OrderDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("OrderStatus")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PaymentMethod")
+                        .HasColumnType("int");
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("ShippedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Street")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("StripeSessionId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal?>("TotalAmount")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Orders");
+                });
+
+            modelBuilder.Entity("DemoShop.DAL.Models.Orderltem", b =>
+                {
+                    b.Property<int>("OrderId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("TotalPrice")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("UnitPrice")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("OrderId", "ProductId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("Orderltems");
+                });
+
             modelBuilder.Entity("DemoShop.DAL.Models.Product", b =>
                 {
                     b.Property<int>("Id")
@@ -304,6 +383,28 @@ namespace DemoShop.DAL.Migrations
                     b.HasIndex("UpdatedById");
 
                     b.ToTable("Products");
+                });
+
+            modelBuilder.Entity("DemoShop.DAL.Models.ProductImage", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ImagePath")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("ProductImages");
                 });
 
             modelBuilder.Entity("DemoShop.DAL.Models.ProductTranslation", b =>
@@ -546,6 +647,36 @@ namespace DemoShop.DAL.Migrations
                     b.Navigation("Category");
                 });
 
+            modelBuilder.Entity("DemoShop.DAL.Models.Order", b =>
+                {
+                    b.HasOne("DemoShop.DAL.Models.ApplicationUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("DemoShop.DAL.Models.Orderltem", b =>
+                {
+                    b.HasOne("DemoShop.DAL.Models.Order", "Order")
+                        .WithMany("Orderltems")
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DemoShop.DAL.Models.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Order");
+
+                    b.Navigation("Product");
+                });
+
             modelBuilder.Entity("DemoShop.DAL.Models.Product", b =>
                 {
                     b.HasOne("DemoShop.DAL.Models.Brand", "Brand")
@@ -578,6 +709,17 @@ namespace DemoShop.DAL.Migrations
                     b.Navigation("CreatedBy");
 
                     b.Navigation("UpdatedBy");
+                });
+
+            modelBuilder.Entity("DemoShop.DAL.Models.ProductImage", b =>
+                {
+                    b.HasOne("DemoShop.DAL.Models.Product", "Product")
+                        .WithMany("Images")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("DemoShop.DAL.Models.ProductTranslation", b =>
@@ -656,8 +798,15 @@ namespace DemoShop.DAL.Migrations
                     b.Navigation("Translations");
                 });
 
+            modelBuilder.Entity("DemoShop.DAL.Models.Order", b =>
+                {
+                    b.Navigation("Orderltems");
+                });
+
             modelBuilder.Entity("DemoShop.DAL.Models.Product", b =>
                 {
+                    b.Navigation("Images");
+
                     b.Navigation("Translations");
                 });
 #pragma warning restore 612, 618

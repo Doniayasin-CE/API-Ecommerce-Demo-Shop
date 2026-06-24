@@ -11,7 +11,8 @@ namespace DemoShop.BLL.Service
     public interface IProductService
     {
         Task CreateProduct(ProductRequest request);
-        Task<List<ProductResponse>> GetAllProducts();
+        Task<PaginationResponse<ProductResponse>> GetAllProducts(PaginationRequest request);
+        //Task<List<ProductResponse>> GetAllProducts();
         Task<ProductResponse?> GetProduct(Expression<Func<Product, bool>> filter);
         Task<bool> DeleteProduct(int id);
         Task<bool> UpdateProduct(int id, ProductUpdateRequest request);

@@ -16,6 +16,7 @@ namespace DemoShop.DAL.Models
         public Category Category { get; set; } = null!;
         public int BrandId { get; set; }
         public Brand Brand { get; set; } = null!;
-        public List<ProductTranslation> Translations { get; set; } = null!;
+        public List<ProductTranslation> Translations { get; set; } = new List<ProductTranslation>();
+        public List<ProductImage> Images { get; set; } = new List<ProductImage>();
     }
 }
