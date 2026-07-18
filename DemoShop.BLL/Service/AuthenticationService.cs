@@ -70,6 +70,9 @@ namespace DemoShop.BLL.Service
             if(!await _userManager.IsEmailConfirmedAsync(user))
                 return new LoginResponse() { Success = false, Message = "your email not confirmed"};
             
+            if(await _userManager.IsLockedOutAsync(user))
+                return new LoginResponse() { Success = false, Message = "Your account is blocked for 5 days!" };
+
             var result = await _userManager.CheckPasswordAsync(user,request.Password);
             if (!result)
                 return new LoginResponse() { Success = false, Message = "Invalid password" };
@@ -88,10 +91,12 @@ namespace DemoShop.BLL.Service
 
         private async Task<string> GenerateAccessToken(ApplicationUser user)
         {
+            //var userRole = _userManager.GetRolesAsync(user).ToString();
             var userClaims = new List<Claim>() { 
                 new Claim(ClaimTypes.NameIdentifier,user.Id.ToString()),
                 new Claim(ClaimTypes.Name,user.UserName!),
-                new Claim(ClaimTypes.Email,user.Email!)
+                new Claim(ClaimTypes.Email,user.Email!),
+                //new Claim(ClaimTypes.Role,userRole!) //new added
             };
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:SecretKey"]!));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);

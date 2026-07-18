@@ -57,6 +57,16 @@ namespace DemoShop.BLL.Mapping
                 .Map(dest => dest.Price, src => src.Product.Price)
                 .Map(dest => dest.Discount, src => src.Product.Discount)
                 .Map(dest => dest.ProductImg, src => $"https://localhost:7043/Images/{src.Product.MainImage}");
+
+            // Order Mapster Configuration
+            TypeAdapterConfig<Order, OrderDetailResponse>.NewConfig()
+                .Map(dest => dest.OrderItems, src => src.Orderltems);
+
+            TypeAdapterConfig<Orderltem, OrderItemResponse>.NewConfig()
+                .Map(dest => dest.ProductName, src => src.Product.Translations.Where(
+                    lang => lang.Language == CultureInfo.CurrentCulture.Name)
+                    .Select(T => T.Name).FirstOrDefault()
+                );
         }
     }
 }

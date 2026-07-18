@@ -36,6 +36,15 @@ namespace DemoShop.PL.Extensions
             services.AddScoped<ICheckoutService, BLL.Service.CheckoutService>();
             //Register the Order Services
             services.AddScoped<IOrderRepository, OrderRepository>();
+            services.AddScoped<IOrderService, OrderService>();
+
+            //Register the User Management Services
+            services.AddScoped<IUserManagementService, UserManagementService>();
+
+            //Register the Review Services
+            services.AddScoped<IReviewRepository, ReviewRepository>();
+            services.AddScoped<IReviewService, BLL.Service.ReviewService>();
+
             // Configure Stripe settings
             services.Configure<StripeSettings>(configuration.GetSection("Stripe"));
             StripeConfiguration.ApiKey = configuration["Stripe:SecretKey"];

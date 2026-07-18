@@ -1,6 +1,7 @@
 using DemoShop.BLL.Mapping;
 using DemoShop.DAL.Utilities;
 using DemoShop.PL.Extensions;
+using DemoShop.PL.Middlewares;
 using Microsoft.Extensions.Options;
 
 namespace DemoShop.PL
@@ -67,6 +68,23 @@ namespace DemoShop.PL
             app.UseCors(CorsPolicyExtensions.PolicyName);
             app.UseAuthentication();
             app.UseAuthorization();
+            //Global Exception Handler modern .net 8+ 
+            //*app.UseExceptionHandler();
+
+            //Inline Custom Middleware
+            app.Use(async(context,next) =>
+            {
+                Console.WriteLine("Processing Request...");
+                await next();
+                Console.WriteLine("Processing Response...");
+            });
+            //Use Custom Middleware class
+            //*app.UseMiddleware<CustomMiddleware>();
+            //Use Custom Middleware Extentsion method
+            //*app.UseCustomMiddleware();
+            //Use Custom Global Exception Handler
+            app.UseGlobalExceptionHandler();
+
             app.MapControllers();
             app.Run();
         }

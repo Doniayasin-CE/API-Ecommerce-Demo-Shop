@@ -8,7 +8,7 @@ namespace DemoShop.DAL.DTO.Request
         public decimal Price { get; set; }
         public decimal Discount { get; set; }
         public int Quantity { get; set; }
-        [AllowedExtensions(["jpg,png"])]
+        //[AllowedExtensions(["jpg,png"])]
         [MaxFileSize(4)] // 4MB
         public IFormFile MainImage { get; set; }
         public List<IFormFile>? SubImages { get; set; }

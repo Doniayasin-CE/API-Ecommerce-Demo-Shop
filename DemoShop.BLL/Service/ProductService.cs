@@ -41,7 +41,7 @@ namespace DemoShop.BLL.Service
             await _productRepository.CreateAsync(product);
         }
 
-        public async Task<PaginationResponse<ProductResponse>> GetAllProducts(PaginationRequest request)
+        public async Task<PaginationResponse<ProductResponse>> GetAllProducts(ProductFilterRequest request)
         {
             var query =  _productRepository.GetQueryable(
                 p => p.Status == EntityStatus.Active,
@@ -52,7 +52,22 @@ namespace DemoShop.BLL.Service
                     nameof(Product.Images)
                 }
             );
-
+            //Apply Filteration
+            if(request.Search != null)
+                query = query.Where(p => p.Translations.Any(t => t.Name.Contains(request.Search)));
+            if(request.CategoryId.HasValue)
+                query = query.Where(p => p.CategoryId ==  request.CategoryId.Value);
+            if(request.BrandId.HasValue)
+                query = query.Where(p => p.BrandId == request.BrandId.Value);
+            if(request.MinimumPrice.HasValue)
+                query = query.Where(p => p.Price >=  request.MinimumPrice.Value);
+            if(request.MaximumPrice.HasValue)
+                query = query.Where(p => p.Price <= request.MaximumPrice.Value);
+            if (request.MaximumRate.HasValue)
+                query = query.Where(p => p.Rate <= request.MaximumRate.Value);
+            if(request.MinimumRate.HasValue)
+                query = query.Where(p => p.Rate >= request.MinimumRate.Value);
+            //Apply Pagination
             var paginated = await query.ToPaginationAsync(request.Page, request.Limit);
             return new PaginationResponse<ProductResponse>
             {

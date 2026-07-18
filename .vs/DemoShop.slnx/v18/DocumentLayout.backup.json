@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\PC\\Documents\\backend-ASP\\API\\DemoShop\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C9842DBA-BCCD-CA4E-4B23-3C2BFD32E646}|DemoShop.PL\\DemoShop.PL.csproj|c:\\users\\pc\\documents\\backend-asp\\api\\demoshop\\demoshop.pl\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C9842DBA-BCCD-CA4E-4B23-3C2BFD32E646}|DemoShop.PL\\DemoShop.PL.csproj|solutionrelative:demoshop.pl\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{041E9700-C23C-1399-A8CD-4533AB2E6CBD}|DemoShop.BLL\\DemoShop.BLL.csproj|c:\\users\\pc\\documents\\backend-asp\\api\\demoshop\\demoshop.bll\\service\\reviewservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{041E9700-C23C-1399-A8CD-4533AB2E6CBD}|DemoShop.BLL\\DemoShop.BLL.csproj|solutionrelative:demoshop.bll\\service\\reviewservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{041E9700-C23C-1399-A8CD-4533AB2E6CBD}|DemoShop.BLL\\DemoShop.BLL.csproj|c:\\users\\pc\\documents\\backend-asp\\api\\demoshop\\demoshop.bll\\service\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{041E9700-C23C-1399-A8CD-4533AB2E6CBD}|DemoShop.BLL\\DemoShop.BLL.csproj|solutionrelative:demoshop.bll\\service\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D0E355C7-C778-1E68-8A2B-5A574C729B66}|DemoShop.DAL\\DemoShop.DAL.csproj|c:\\users\\pc\\documents\\backend-asp\\api\\demoshop\\demoshop.dal\\dto\\request\\addreviewrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D0E355C7-C778-1E68-8A2B-5A574C729B66}|DemoShop.DAL\\DemoShop.DAL.csproj|solutionrelative:demoshop.dal\\dto\\request\\addreviewrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{041E9700-C23C-1399-A8CD-4533AB2E6CBD}|DemoShop.BLL\\DemoShop.BLL.csproj|c:\\users\\pc\\documents\\backend-asp\\api\\demoshop\\demoshop.bll\\service\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{041E9700-C23C-1399-A8CD-4533AB2E6CBD}|DemoShop.BLL\\DemoShop.BLL.csproj|solutionrelative:demoshop.bll\\service\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C9842DBA-BCCD-CA4E-4B23-3C2BFD32E646}|DemoShop.PL\\DemoShop.PL.csproj|c:\\users\\pc\\documents\\backend-asp\\api\\demoshop\\demoshop.pl\\controllers\\reviewscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C9842DBA-BCCD-CA4E-4B23-3C2BFD32E646}|DemoShop.PL\\DemoShop.PL.csproj|solutionrelative:demoshop.pl\\controllers\\reviewscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D0E355C7-C778-1E68-8A2B-5A574C729B66}|DemoShop.DAL\\DemoShop.DAL.csproj|c:\\users\\pc\\documents\\backend-asp\\api\\demoshop\\demoshop.dal\\repository\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D0E355C7-C778-1E68-8A2B-5A574C729B66}|DemoShop.DAL\\DemoShop.DAL.csproj|solutionrelative:demoshop.dal\\repository\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D0E355C7-C778-1E68-8A2B-5A574C729B66}|DemoShop.DAL\\DemoShop.DAL.csproj|c:\\users\\pc\\documents\\backend-asp\\api\\demoshop\\demoshop.dal\\models\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D0E355C7-C778-1E68-8A2B-5A574C729B66}|DemoShop.DAL\\DemoShop.DAL.csproj|solutionrelative:demoshop.dal\\models\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,63 +26,63 @@
       "DocumentGroups": [
         {
           "DockedHeight": 142,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ProductsController.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\Documents\\backend-ASP\\API\\DemoShop\\DemoShop.PL\\Controllers\\ProductsController.cs",
-              "RelativeDocumentMoniker": "DemoShop.PL\\Controllers\\ProductsController.cs",
-              "ToolTip": "C:\\Users\\PC\\Documents\\backend-ASP\\API\\DemoShop\\DemoShop.PL\\Controllers\\ProductsController.cs",
-              "RelativeToolTip": "DemoShop.PL\\Controllers\\ProductsController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-24T20:06:53.928Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "IProductService.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\Documents\\backend-ASP\\API\\DemoShop\\DemoShop.BLL\\Service\\IProductService.cs",
-              "RelativeDocumentMoniker": "DemoShop.BLL\\Service\\IProductService.cs",
-              "ToolTip": "C:\\Users\\PC\\Documents\\backend-ASP\\API\\DemoShop\\DemoShop.BLL\\Service\\IProductService.cs",
-              "RelativeToolTip": "DemoShop.BLL\\Service\\IProductService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Title": "ReviewsController.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Documents\\backend-ASP\\API\\DemoShop\\DemoShop.PL\\Controllers\\ReviewsController.cs",
+              "RelativeDocumentMoniker": "DemoShop.PL\\Controllers\\ReviewsController.cs",
+              "ToolTip": "C:\\Users\\PC\\Documents\\backend-ASP\\API\\DemoShop\\DemoShop.PL\\Controllers\\ReviewsController.cs",
+              "RelativeToolTip": "DemoShop.PL\\Controllers\\ReviewsController.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-24T20:02:48.192Z",
+              "WhenOpened": "2026-07-18T00:57:03.113Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ReviewService.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Documents\\backend-ASP\\API\\DemoShop\\DemoShop.BLL\\Service\\ReviewService.cs",
+              "RelativeDocumentMoniker": "DemoShop.BLL\\Service\\ReviewService.cs",
+              "ToolTip": "C:\\Users\\PC\\Documents\\backend-ASP\\API\\DemoShop\\DemoShop.BLL\\Service\\ReviewService.cs",
+              "RelativeToolTip": "DemoShop.BLL\\Service\\ReviewService.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAIwDMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-18T00:26:58.04Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ProductService.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\Documents\\backend-ASP\\API\\DemoShop\\DemoShop.BLL\\Service\\ProductService.cs",
-              "RelativeDocumentMoniker": "DemoShop.BLL\\Service\\ProductService.cs",
-              "ToolTip": "C:\\Users\\PC\\Documents\\backend-ASP\\API\\DemoShop\\DemoShop.BLL\\Service\\ProductService.cs",
-              "RelativeToolTip": "DemoShop.BLL\\Service\\ProductService.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAACkAAAAJAAAAAAAAAA==",
+              "Title": "AddReviewRequest.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Documents\\backend-ASP\\API\\DemoShop\\DemoShop.DAL\\DTO\\Request\\AddReviewRequest.cs",
+              "RelativeDocumentMoniker": "DemoShop.DAL\\DTO\\Request\\AddReviewRequest.cs",
+              "ToolTip": "C:\\Users\\PC\\Documents\\backend-ASP\\API\\DemoShop\\DemoShop.DAL\\DTO\\Request\\AddReviewRequest.cs",
+              "RelativeToolTip": "DemoShop.DAL\\DTO\\Request\\AddReviewRequest.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAgwAkAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-24T18:35:30.779Z",
+              "WhenOpened": "2026-07-15T22:22:12.698Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "GenericRepository.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\Documents\\backend-ASP\\API\\DemoShop\\DemoShop.DAL\\Repository\\GenericRepository.cs",
-              "RelativeDocumentMoniker": "DemoShop.DAL\\Repository\\GenericRepository.cs",
-              "ToolTip": "C:\\Users\\PC\\Documents\\backend-ASP\\API\\DemoShop\\DemoShop.DAL\\Repository\\GenericRepository.cs",
-              "RelativeToolTip": "DemoShop.DAL\\Repository\\GenericRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA6AAAAAAAAAA==",
+              "Title": "Review.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Documents\\backend-ASP\\API\\DemoShop\\DemoShop.DAL\\Models\\Review.cs",
+              "RelativeDocumentMoniker": "DemoShop.DAL\\Models\\Review.cs",
+              "ToolTip": "C:\\Users\\PC\\Documents\\backend-ASP\\API\\DemoShop\\DemoShop.DAL\\Models\\Review.cs",
+              "RelativeToolTip": "DemoShop.DAL\\Models\\Review.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-24T18:33:20.824Z",
+              "WhenOpened": "2026-07-15T22:15:18.362Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
             }
           ]
         },

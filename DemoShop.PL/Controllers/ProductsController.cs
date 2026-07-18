@@ -17,7 +17,7 @@ namespace DemoShop.PL.Controllers
         }
 
         [HttpGet("")]
-        public async Task<IActionResult> Index([FromQuery] PaginationRequest request)
+        public async Task<IActionResult> Index([FromQuery] ProductFilterRequest request)
         {
             var result = await _productService.GetAllProducts(request);
             if (result is null) return BadRequest(result);

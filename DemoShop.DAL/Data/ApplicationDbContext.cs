@@ -21,6 +21,7 @@ namespace DemoShop.DAL.Data
         public DbSet<Order> Orders { get; set; }
         public DbSet<Orderltem> Orderltems { get; set; }
         public DbSet<ProductImage> ProductImages { get; set; }
+        public DbSet<Review> Reviews { get; set; }
        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options,
            IHttpContextAccessor HttpContextAccessor) 
             : base(options)
